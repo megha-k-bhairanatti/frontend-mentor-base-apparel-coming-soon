@@ -1,0 +1,175 @@
+@import "variables";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin height {
+  height: 625px;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: $fontFamily;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .logo {
+    margin-bottom: 6.5rem;
+  }
+}
+
+.left-col {
+  background: url("../images/bg-pattern-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 60%;
+  padding: 3rem 6rem 8rem 8rem;
+  @include height;
+  .heading {
+    font-size: 3rem;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    .title {
+      color: $desaturatedRed;
+      font-weight: 400;
+    }
+    .sub-title {
+      color: $darkGrayishRed;
+      font-weight: bolder;
+      letter-spacing: 20px;
+      text-shadow: 1px 0px $darkGrayishRed;
+    }
+  }
+  p {
+    color: $desaturatedRed;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    width: 69%;
+    line-height: 1.5;
+  }
+}
+
+.right-col {
+  background: url("../images/hero-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40%;
+  @include height;
+}
+
+form {
+  display: flex;
+  ::placeholder {
+    color: $desaturatedRed;
+    font-family: $fontFamily;
+  }
+  input {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 65%;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -50px;
+    border-radius: 2rem;
+    cursor: pointer;
+    width: 5rem;
+    height: 49px;
+    background: linear-gradient(135deg, $lightPink, $babyPink);
+    box-shadow: $babyPink 2px 5px 11px;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+}
+
+@import "attribution";
+
+/* Mobile and iPad devices */
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+  section {
+    flex-direction: column-reverse;
+    .logo {
+      position: absolute;
+      top: 0;
+      padding: 1.9rem 0;
+      margin: 0;
+      img {
+        width: 140px;
+      }
+    }
+  }
+  .right-col,
+  .left-col {
+    width: 100%;
+  }
+  .left-col {
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    height: auto;
+    .heading {
+      font-size: 2rem;
+    }
+    p {
+      width: 100%;
+    }
+  }
+  .right-col {
+    background: url("../images/hero-mobile.jpg");
+    margin-top: 6rem;
+    height: 280px;
+    background-position: 20% 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  form {
+    text-align: left;
+    input {
+      width: 100%;
+      height: 40px;
+      padding: 1rem;
+    }
+    button {
+      width: 4rem;
+      height: 40px;
+    }
+  }
+
+  .attribution {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media only screen and (min-device-width: 570px) and (max-device-width: 768px) {
+  .right-col {
+    height: 435px;
+    background: url("../images/hero-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  form {
+    align-items: center;
+    justify-content: center;
+    input {
+      width: 50%;
+    }
+  }
+}
