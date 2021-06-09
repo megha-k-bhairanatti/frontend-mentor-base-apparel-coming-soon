@@ -134,6 +134,10 @@ form button {
   font-size: 1.3rem;
 }
 
+form button:hover {
+  background: #f8bfbf;
+}
+
 .attribution {
   font-size: 16px;
   text-align: center;
